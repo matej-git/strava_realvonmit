@@ -1,0 +1,3 @@
+echo
+python 02_download_detail_info.py
+pause

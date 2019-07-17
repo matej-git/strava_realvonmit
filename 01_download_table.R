@@ -48,5 +48,5 @@ while (statment)
   }
 }
 
-write.csv(table_final, paste0("data/",city,"_",type,"_",year,"_raw",".csv"))
+write.csv(table_final, paste0("data/raw/",city,"_",type,"_",year,"_raw",".csv"))
 
