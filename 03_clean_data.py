@@ -1,121 +1,75 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[52]:
-
-
 import pandas as pd
 import numpy as np
 import re
 import time
 import random
+import matplotlib.pyplot as plt
 
+# Set race
+city = 'tokyo'
+year = '2016'
+race = 'marathon'
 
-# In[53]:
-
-
-# set race
-city = 'barcelona'
-year = '2019'
-race = 'half'
-
-
-# In[121]:
-
-
-# set outlier boarders
-if race == 'half':
+# Set outlier boarders
+if race == 'halfmarathon':
     race_length = 21.0975
     floor = race_length - 3
     cap = race_length + 3
-if race == 'full':
+    time_cap = 3.5
+if race == 'marathon':
     race_length = 42.195
     floor = race_length - 6
-    cap = race_length + 6   
+    cap = race_length + 6
+    time_cap = 7
 
+race_table = pd.read_csv('data/full/'+city+'_'+race+'_'+year+'_full.csv', index_col = 0)
+race_table = race_table.drop(columns=['Name', 'Strava Activity'])
 
-# In[106]:
+# Clear distance
+race_table.Distance = race_table.Distance.astype(str).map(lambda x: x.lstrip("['").strip("']"))
+race_table.Distance = pd.to_numeric(race_table.Distance)
+# Filter outliers
+race_table = race_table[(race_table.Distance<cap) & (race_table.Distance>floor)]
 
+# Add info to table
+race_table['city'] = city.replace('_',' ').title()
+race_table['year'] = year
+race_table['race_type'] = race.title()
 
-race_table = pd.read_csv('data/'+city+'_'+race+'_'+year+'.csv')
-
-
-# In[107]:
-
-
-#Clear wath info
-race_table.Watch = race_table.Watch.map(lambda x: x.lstrip("['").strip("']"))
+# Clear wath info
+race_table.Watch = race_table.Watch.astype(str).map(lambda x: x.lstrip("['").strip("']"))
 race_table.Watch = race_table.Watch.str.replace('<a href="/', '')
 race_table.Watch = race_table.Watch.str.replace('</a>', '')
 race_table.Watch = race_table.Watch.str.replace('mobile">Strava ', '')
 race_table.Watch = race_table.Watch.str.replace('android-wear">', '')
 race_table.Watch = race_table.Watch.str.replace('apple-watch">', '')
+#jebnute nazvy garminov
+race_table.Watch = race_table.Watch.str.replace('vívo', 'vivo')
+race_table.Watch = race_table.Watch.str.replace('Vívo', 'vivo')
+race_table.Watch = race_table.Watch.str.replace('fēnix', 'fenix')
 
-
-# In[109]:
-
-
-#Extract watch brand
+# Extract watch brand
 race_table['Watch_Brand'] = race_table.Watch.str.split().str[0]
-
-
-# In[116]:
-
-
-# Clear distance
-race_table.Distance = race_table.Distance.map(lambda x: x.lstrip("['").strip("']"))
-race_table.Distance = pd.to_numeric(race_table.Distance)
-
-
-# In[110]:
-
+# Watch Error
+race_table['Watch_Error'] = race_table.Distance - race_length
+race_table['Watch_Error_Abs'] = race_table.Watch_Error.abs()
 
 # Clear shoes
 race_table.Shoes = race_table.Shoes.map(lambda x: x.lstrip("['").strip("']"))
+race_table.Shoes = race_table.Shoes.str.replace('—', 'NA')
 
+race_table.athlet_url = race_table.athlet_url.str.replace('/athletes/', '')
+race_table.race_url = race_table.race_url.str.replace('/activities/', '')
 
-# In[122]:
+race_table['H'] = pd.to_numeric(race_table.Finish.map(lambda x: x.split(":")[0]))
+race_table['M'] = pd.to_numeric(race_table.Finish.map(lambda x: x.split(":")[1]))
+race_table['S'] = pd.to_numeric(race_table.Finish.map(lambda x: x.split(":")[2]))
 
+race_table['Finish_num'] = race_table.H + race_table.M/60 + race_table.S/3600
+race_table = race_table.drop(columns=['H', 'M', 'S'])
+# Filter outliers
+race_table = race_table[race_table.Finish_num<time_cap]
 
-#filter outliers
-race_table = race_table[(race_table.Distance<cap) & (race_table.Distance>floor)]
-
-
-# In[124]:
-
-
-race_table['Watch_Error'] = race_table.Distance - race_length
-
-
-# In[126]:
-
-
-import matplotlib.pyplot as plt
-
-
-# In[130]:
-
-
-plt.hist(race_table['Watch_Error'], bins = 50)
-plt.title('Error Check')
-
-
-# In[135]:
-
-
-plt.hist(race_table[race_table.Watch_Brand == 'Huami']['Watch_Error'], bins = 50)
-plt.title('Amazefit Error Check')
-
-
-# In[137]:
-
-
-plt.hist(race_table[race_table.Watch_Brand == 'Garmin']['Watch_Error'], bins = 50)
-plt.title('Garmin Error Check')
-
-
-# In[138]:
-
-
-race_table.to_csv(('data/'+city+'_'+race+'_'+year+'_final'+'.csv'))
+# Save output
+race_table.to_csv(('data/clean/'+city+'_'+race+'_'+year+'.csv'), index=False)
 

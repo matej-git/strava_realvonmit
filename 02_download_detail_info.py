@@ -1,27 +1,15 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 from webbot import Browser
+from bs4 import BeautifulSoup as bs
+
 import pandas as pd
 import re
 import time
 import random
 
-
-# In[2]:
-
-
 # set race
-city = 'london'
+city = 'valencia'
 year = '2018'
-race = 'marathon'
-
-
-# In[3]:
-
+race = 'halfmarathon'
 
 #get a race data
 race_table = pd.read_csv('data/raw/'+city+'_'+race+'_'+year+'_'+'raw.csv', encoding = "ISO-8859-1", index_col = 0)
@@ -32,10 +20,6 @@ web = Browser()
 names = ['pavol.svrbo@gmail.com','peter.svrbo@gmail.com','juraj.svrbo@gmail.com','jan.svrbo@gmail.com']
 passwords = ['akosamas','akosamas','akosamas','akosamas']
 
-
-# In[7]:
-
-
 def strava_login(web, name, password):
     web.go_to('https://www.strava.com/login') 
     web.type(name , into='email')
@@ -43,26 +27,31 @@ def strava_login(web, name, password):
     web.click('submit', id = 'login-button')
     return(web)
 
+strava_login(web,names[0],passwords[0])
 
-# In[5]:
-
+web.go_to('https://www.strava.com/activities/1737695224')
+activity = web.get_page_source()
+soup = bs(activity, 'html.parser')
 
 def strava_download(web, url):
-    regex_watch = r'(?<=device spans8)">(.*)(?=</div><div class="gear spans8)'
-    regex_shoes = r'(?<=<span class="gear-name">)(.*)(?=</span></div></div></div>)'
-    regex_distance = r'(?<=inline-stats section"><li><strong>)(.*)(?=<abbr class="unit" title="kilometers">km)'
     web.go_to('https://www.strava.com'+url)
     activity = web.get_page_source()
-    activity_clear = activity.replace('\n','')
-    watch = re.findall(regex_watch, activity_clear)
-    shoes = re.findall(regex_shoes, activity_clear)
-    distance = re.findall(regex_distance, activity_clear)
+    soup = bs(activity, 'html.parser')
+    
+    watch_l = soup.find_all('div', attrs = {'class':'device spans8'})
+    if len(watch_l) == 0: watch = None
+    else: watch = watch_l[0].text.replace('\n','')
+    
+    shoes_l = soup.find_all('span', attrs = {'class':'gear-name'})
+    if len(shoes_l) == 0: shoes = None
+    else: shoes = shoes_l[0].text.replace('\n','')
+        
+    distance_l = soup.find_all('ul', attrs = {'class':'inline-stats section'})
+    if len(distance_l) == 0: distance = None
+    else: distance = distance_l[0].text.replace('\n','')[:5]
+    
     condition = 'Too Many Requests' in activity
     return([condition, watch, shoes, distance])
-
-
-# In[8]:
-
 
 watch_list = []
 shoes_list = []
@@ -70,10 +59,6 @@ distance_list = []
 i = 0
 strava_login(web, names[0], passwords[0])
 time.sleep(10)
-
-
-# In[ ]:
-
 
 for url in race_table['race_url']:
     info = strava_download(web, url)
@@ -84,7 +69,7 @@ for url in race_table['race_url']:
         passwords.pop(0)
         web.go_to('https://www.strava.com/logout') 
         strava_login(web, names[0], passwords[0])
-        time.sleep(120)
+        time.sleep(30)
         info = strava_download(web, url)
     watch_list.append(info[1])
     shoes_list.append(info[2])
@@ -92,38 +77,16 @@ for url in race_table['race_url']:
     i = i+1
     print(str(i)+' out of '+str(l))
 
-
-# In[ ]:
-
-
-#pd.DataFrame(watch_list).to_csv('watch_list.csv')
-#pd.DataFrame(shoes_list).to_csv('shoes_list.csv')
-#pd.DataFrame(distance_list).to_csv('distance_list.csv')
-
-
-# In[ ]:
-
-
 race_table['Watch'] = watch_list
 race_table['Shoes'] = shoes_list
 race_table['Distance'] = distance_list
 
-
-# In[ ]:
-
-
-race_table.to_csv('data/full/'+city+'_'+race+'_'+year+'.csv')
-
-
-# In[ ]:
-
+race_table.to_csv('data/full/'+city+'_'+race+'_'+year+'_full.csv')
 
 # Turn off computer
-#import os
-#os.system('shutdown -s')
+import os
+os.system('shutdown -s')
 
-
-# In[ ]:
 
 
 # Different aproach
