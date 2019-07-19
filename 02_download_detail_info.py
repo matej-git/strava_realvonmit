@@ -7,9 +7,9 @@ import time
 import random
 
 # set race
-city = 'valencia'
+city = 'chicago'
 year = '2018'
-race = 'halfmarathon'
+race = 'marathon'
 
 #get a race data
 race_table = pd.read_csv('data/raw/'+city+'_'+race+'_'+year+'_'+'raw.csv', encoding = "ISO-8859-1", index_col = 0)

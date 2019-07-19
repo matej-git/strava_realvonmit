@@ -6,9 +6,9 @@ import random
 import matplotlib.pyplot as plt
 
 # Set race
-city = 'tokyo'
-year = '2016'
-race = 'marathon'
+city = 'valencia'
+year = '2018'
+race = 'halfmarathon'
 
 # Set outlier boarders
 if race == 'halfmarathon':
@@ -27,7 +27,7 @@ race_table = race_table.drop(columns=['Name', 'Strava Activity'])
 
 # Clear distance
 race_table.Distance = race_table.Distance.astype(str).map(lambda x: x.lstrip("['").strip("']"))
-race_table.Distance = pd.to_numeric(race_table.Distance)
+race_table.Distance = pd.to_numeric(race_table.Distance, errors='coerce')
 # Filter outliers
 race_table = race_table[(race_table.Distance<cap) & (race_table.Distance>floor)]
 

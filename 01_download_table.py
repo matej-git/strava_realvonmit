@@ -17,6 +17,7 @@ race_table = pd.DataFrame({
     'Name' : [],
     'Gender' : [],
     'Age' : [],
+    'Finish' : [],
     'Strava activity' : [],
     'athlet_url' : [],
     'race_url' : []
@@ -30,6 +31,7 @@ def strava_scrape(url, i):
     athlete_name = [x.text.replace('\n','') for x in soup.find_all('td', attrs = {'class':'athlete-name'})]
     athlete_gender = [x.text.replace('\n','') for x in soup.find_all('td', attrs = {'class':'athlete-gender'})]
     athlete_age = [x.text for x in soup.find_all('td', attrs = {'class':'athlete-age'})]
+    finish_time = [x.text for x in soup.find_all('td', attrs = {'class':'finish-time'})]
     strava_activity = [x.text.replace('\n','') for x in soup.find_all('td', attrs = {'class':'athlete-activity'})]
 
     athlet_url = []
@@ -46,6 +48,7 @@ def strava_scrape(url, i):
     'Name' : athlete_name,
     'Gender' : athlete_gender,
     'Age' : athlete_age,
+    'Finish' : finish_time,
     'Strava activity' : strava_activity,
     'athlet_url' : athlet_url,
     'race_url' : race_url})
