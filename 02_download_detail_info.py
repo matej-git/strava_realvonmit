@@ -7,7 +7,7 @@ import time
 import random
 
 # set race
-city = 'chicago'
+city = 'london'
 year = '2018'
 race = 'marathon'
 
