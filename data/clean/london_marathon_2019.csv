@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 2,2,M,20-24,2:11:08,3:06/km,1478217,2325165628,Garmin Forerunner 235,NA,42.45,London,2019,Marathon,Garmin,0.25500000000000256,0.25500000000000256,NA,2.1855555555555553
 3,3,M,25-34,2:11:13,3:07/km,7108065,2401562348,Garmin Forerunner 235,NA,42.66,London,2019,Marathon,Garmin,0.4649999999999963,0.4649999999999963,NA,2.1869444444444444
 4,4,M,NA,2:13:27,3:10/km,2477350,2329116363,Garmin Forerunner 935,New Balance 1080,42.41,London,2019,Marathon,Garmin,0.2149999999999963,0.2149999999999963,New Balance,2.2241666666666666

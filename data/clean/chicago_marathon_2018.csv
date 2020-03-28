@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 2,2,M,25-34,2:09:22,3:04/km,26014313,1941896216,Garmin Forerunner 235,NA,40.83,Chicago,2018,Marathon,Garmin,-1.365000000000002,1.365000000000002,NA,2.156111111111111
 3,3,M,25-34,2:16:43,3:14/km,3379511,1890679023,Suunto Ambit3 Sport,NA,43.52,Chicago,2018,Marathon,Suunto,1.3250000000000028,1.3250000000000028,NA,2.278611111111111
 4,4,M,NA,2:18:53,3:17/km,7115616,1905235306,Garmin Forerunner 220,NA,42.19,Chicago,2018,Marathon,Garmin,-0.005000000000002558,0.005000000000002558,NA,2.314722222222222

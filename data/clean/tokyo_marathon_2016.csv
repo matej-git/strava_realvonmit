@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 1,1,M,35-44,2:31:46,3:36/km,3481734,504063946,Garmin Forerunner 910XT,Mizuno Wave Rider 18 Vertes,42.63,Tokyo,2016,Marathon,Garmin,0.4350000000000023,0.4350000000000023,Mizuno,2.5294444444444446
 2,2,M,NA,3:04:44,4:23/km,12406626,504054179,Garmin Forerunner 220,NA,42.91,Tokyo,2016,Marathon,Garmin,0.7149999999999963,0.7149999999999963,NA,3.0788888888888892
 3,3,M,NA,3:18:53,4:43/km,4307271,504134913,Soleus GPS,NA,44.09,Tokyo,2016,Marathon,Soleus,1.8950000000000031,1.8950000000000031,NA,3.314722222222222

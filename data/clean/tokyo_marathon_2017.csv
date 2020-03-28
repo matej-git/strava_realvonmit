@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 1,1,M,35-44,2:24:11,3:25/km,9426736,881456544,Garmin Forerunner 620,NA,44.06,Tokyo,2017,Marathon,Garmin,1.865000000000002,1.865000000000002,NA,2.4030555555555555
 2,2,M,35-44,2:26:01,3:28/km,1808914,883029926,Garmin Forerunner 910XT,NA,42.8,Tokyo,2017,Marathon,Garmin,0.6049999999999969,0.6049999999999969,NA,2.4336111111111114
 3,3,M,35-44,2:26:43,3:29/km,8394863,879822345,NA,NA,43.14,Tokyo,2017,Marathon,NA,0.9450000000000003,0.9450000000000003,NA,2.445277777777778

@@ -6,10 +6,10 @@ import pandas as pd
 import re
 
 # set race
-url_race = '2018-medio-maratn-valencia-trinidad-alfonso'
-city = 'valencia'
-year = '2018'
-race = 'halfmarathon'
+url_race = '2494'
+city = 'boston'
+year = '2019'
+race = 'marathon'
 
 url = 'https://www.strava.com/running_races/' + url_race + '/results?page='
 race_table = pd.DataFrame({

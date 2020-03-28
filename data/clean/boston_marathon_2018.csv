@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 1,1,M,35-44,2:25:02,3:26/km,7029099,1512221840,Garmin Forerunner 235,NA,42.37,Boston,2018,Marathon,Garmin,0.17499999999999716,0.17499999999999716,NA,2.417222222222222
 3,3,M,NA,2:29:01,3:32/km,17895639,1512205886,Garmin Forerunner 630,Adidas Adios Boost,42.35,Boston,2018,Marathon,Garmin,0.15500000000000114,0.15500000000000114,Adidas,2.483611111111111
 4,4,M,25-34,2:29:01,3:32/km,13590849,1512322766,Garmin fenix 5S,New Balance Hanzo,42.52,Boston,2018,Marathon,Garmin,0.32500000000000284,0.32500000000000284,New Balance,2.483611111111111

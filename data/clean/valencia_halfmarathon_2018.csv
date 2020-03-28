@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 0,1,M,25-34,1:02:17,29367017,1941190038,Garmin Forerunner 235,NA,21.16,Valencia,2018,Halfmarathon,Garmin,0.0625,0.0625,NA,1.0380555555555557
 1,2,M,20-24,1:02:20,23870632,1931565739,Garmin Forerunner 630,NA,21.2,Valencia,2018,Halfmarathon,Garmin,0.10249999999999915,0.10249999999999915,NA,1.038888888888889
 2,3,M,35-44,1:02:24,5890060,1931708777,Suunto,Nike Vaporfly 4%,21.43,Valencia,2018,Halfmarathon,Suunto,0.3324999999999996,0.3324999999999996,Nike,1.04

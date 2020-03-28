@@ -7,9 +7,11 @@ import time
 import random
 
 # set race
-city = 'london'
-year = '2018'
+city = 'berlin'
+year = '2016'
 race = 'marathon'
+# shutdown at the end
+shutdown = False
 
 #get a race data
 race_table = pd.read_csv('data/raw/'+city+'_'+race+'_'+year+'_'+'raw.csv', encoding = "ISO-8859-1", index_col = 0)
@@ -82,10 +84,10 @@ race_table['Shoes'] = shoes_list
 race_table['Distance'] = distance_list
 
 race_table.to_csv('data/full/'+city+'_'+race+'_'+year+'_full.csv')
-
+print(city.capitalize()+' '+year+' '+race+' details successfully downloaded!')
 # Turn off computer
 import os
-os.system('shutdown -s')
+if shutdown: os.system('shutdown -s')
 
 
 

@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 1,1,M,NA,2:21:01,3:21/km,17782492,1424554654,Garmin Forerunner 935,Asolo Hyperspeed,42.69,Tokyo,2018,Marathon,Garmin,0.49499999999999744,0.49499999999999744,Asolo,2.350277777777778
 2,2,M,35-44,2:22:47,3:23/km,29053114,1463525603,NA,NA,42.54,Tokyo,2018,Marathon,NA,0.34499999999999886,0.34499999999999886,NA,2.379722222222222
 3,3,M,NA,2:23:20,3:24/km,8565039,1424534979,Garmin Forerunner 235,NA,42.78,Tokyo,2018,Marathon,Garmin,0.5850000000000009,0.5850000000000009,NA,2.388888888888889

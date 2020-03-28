@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 4,4,M,25-34,2:15:55,3:13/km,11204534,1524689165,Garmin Forerunner 235,NA,42.25,London,2018,Marathon,Garmin,0.054999999999999716,0.054999999999999716,NA,2.265277777777778
 5,5,M,25-34,2:21:53,3:22/km,6563413,1524642687,Garmin Forerunner 235,Nike Vaporfly - Red,42.44,London,2018,Marathon,Garmin,0.24499999999999744,0.24499999999999744,Nike,2.3647222222222224
 6,6,M,25-34,2:22:53,3:23/km,2993770,1524507004,Garmin Forerunner 220,NA,42.31,London,2018,Marathon,Garmin,0.11500000000000199,0.11500000000000199,NA,2.381388888888889

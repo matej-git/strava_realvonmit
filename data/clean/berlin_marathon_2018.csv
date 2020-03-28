@@ -1,4 +1,4 @@
-,Rank,Gender,Age,Finish,Pace,Athlet_url,Race_url,Watch,Shoes,Distance,City,Year,Race_Type,Watch_Brand,Watch_Error,Watch_Error_Abs,Shoes_Brand,Finish_Numeric
+,Rank,Gender,Age,Finish,Pace,Athlet url,Race url,Watch,Shoes,Distance,City,Year,Race Type,Watch Brand,Watch Error,Watch Error Abs,Shoes Brand,Finish Numeric
 2,2,M,NA,2:16:28,3:14/km,10158066,1846290674,Garmin Forerunner 620,NA,42.56,Berlin,2018,Marathon,Garmin,0.365000000000002,0.365000000000002,NA,2.2744444444444443
 3,3,M,25-34,2:16:39,3:14/km,2473196,1845175726,Garmin fenix 5,Nike Vaporfly 4% Fk #1,42.94,Berlin,2018,Marathon,Garmin,0.7449999999999974,0.7449999999999974,Nike,2.2775
 4,4,M,35-44,2:17:29,3:15/km,7621711,1847150174,Garmin Forerunner 610,Mizuno 4 Grey,42.64,Berlin,2018,Marathon,Garmin,0.4450000000000003,0.4450000000000003,Mizuno,2.2913888888888887
